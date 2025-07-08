@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Built on Frappe. https://frappeframework.com/ -->
-<html lang="en">
+<html lang="{{ frappe.lang }}" dir="{{ 'rtl' if is_rtl() else 'ltr' }}">
+
 
 <head>
 	<meta charset="utf-8">
@@ -48,9 +49,10 @@
 			frappe.ready_events.push(fn);
 		}
 		window.dev_server = {{ dev_server }};
-		window.socketio_port = {{ (frappe.socketio_port or 'null') }};
-		window.show_language_picker = {{ show_language_picker or 'false' }};
+		window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+		window.show_language_picker = {{ show_language_picker or 'true' }};
 	</script>
+
 </head>
 
 <body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}"
@@ -86,9 +88,13 @@
 	<!-- js should be loaded in body! -->
 	<script>
 		frappe.boot = {{ boot | json }}
+		console.log(frappe.boot);
 		// for backward compatibility of some libs
 		frappe.sys_defaults = frappe.boot.sysdefaults;
 	</script>
+
+
+
 	{{ include_script('frappe-web.bundle.js') }}
 	{% endblock %}
 

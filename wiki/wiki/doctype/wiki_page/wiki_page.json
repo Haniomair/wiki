@@ -17,6 +17,8 @@
   "allow_guest",
   "section_break_4",
   "content",
+  "section_break_smvm",
+  "table_xnyz",
   "meta_tags_section",
   "meta_description",
   "meta_image",
@@ -96,6 +98,15 @@
    "fieldname": "meta_keywords",
    "fieldtype": "Small Text",
    "label": "Keywords"
+  },
+  {
+   "fieldname": "section_break_smvm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_xnyz",
+   "fieldtype": "Table",
+   "options": "Wiki Page Content"
   }
  ],
  "has_web_view": 1,
@@ -113,7 +124,7 @@
    "link_fieldname": "wiki_page"
   }
  ],
- "modified": "2024-09-04 17:06:27.584176",
+ "modified": "2025-07-07 21:29:17.368938",
  "modified_by": "Administrator",
  "module": "Wiki",
  "name": "Wiki Page",
@@ -145,6 +156,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

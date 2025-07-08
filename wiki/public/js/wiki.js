@@ -1,3 +1,4 @@
+
 function add_link_to_headings() {
   $(".from-markdown")
     .not(".revision-content")
@@ -206,11 +207,12 @@ window.Wiki = class Wiki {
     $("html,body").animate({ scrollTop: 0 }, 0);
   }
 
+
   set_last_updated_date() {
     const lastUpdatedDate = frappe.datetime.prettyDate(
       $(".user-contributions").data("date")
     );
-    $(".user-contributions").append(`last updated ${lastUpdatedDate}`);
+    $(".user-contributions").append(`${ frappe.boot.lang == 'ar' ? 'آخر تحديث' : 'last updated'} ${lastUpdatedDate}`);
   }
 
   set_darkmode_button() {

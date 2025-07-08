@@ -255,6 +255,7 @@ class WikiPage(WebsiteGenerator):
 			ordered_wiki_spaces = []
 
 		context.spaces = ordered_wiki_spaces
+		
 
 		wiki_space_name = frappe.get_value("Wiki Group Item", {"wiki_page": self.name}, "parent")
 		wiki_space = (
